@@ -38,7 +38,7 @@ namespace MagicaConverter{
 			// Get the root visual element of the window
 			VisualElement root = rootVisualElement;
 
-			Label warningLabel = new Label("The conversion is not 100% accurate\n when using different start and end radius.\n Sometime the resulting lenght is too high,\n in such cases it will be clamped to 2");
+			Label warningLabel = new Label("The conversion is not 100% accurate\n in some cirtumstances.\n Sometime the resulting lenght is too high,\n in such cases it will be clamped to 2");
 			
 			// Apply styles to the label
 			warningLabel.style.color = Color.yellow;
