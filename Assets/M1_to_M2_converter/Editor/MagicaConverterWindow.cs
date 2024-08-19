@@ -111,16 +111,7 @@ namespace MagicaConverter{
 		private void convert(){
 			if(selectedOption == ConversionTypes.Colliders || selectedOption == ConversionTypes.Full){
 				Debug.Log($"selectedOption == ConversionTypes.Colliders | {selectedOption == ConversionTypes.Colliders}");
-				MG1_MG2_collider();
-			}
-		}
-		private void MG1_MG2_collider(){
-			MagicaCapsuleCollider1[] colliders = selectedObject.GetComponentsInChildren<MagicaCapsuleCollider1>(true);
-			foreach(MagicaCapsuleCollider1 collider in colliders){
-				GameObject parentObject = collider.gameObject;
-				
-				MagicaCapsuleCollider2 addedCollider = parentObject.AddComponent<MagicaCapsuleCollider2>();
-				MG_MG2Converter.convertCollider(collider,addedCollider);
+				MG1_MG2Converter.convertColliders(selectedObject);
 			}
 		}
 	}

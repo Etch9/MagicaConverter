@@ -63,6 +63,16 @@ namespace MagicaConverter{
 			}
 		}
 
+		private void convertColliders(GameObject selectedObject){
+			MagicaCapsuleCollider1[] colliders = selectedObject.GetComponentsInChildren<MagicaCapsuleCollider1>(true);
+			foreach(MagicaCapsuleCollider1 collider in colliders){
+				GameObject parentObject = collider.gameObject;
+				
+				MagicaCapsuleCollider2 addedCollider = parentObject.AddComponent<MagicaCapsuleCollider2>();
+				MG_MG2Converter.convertCollider(collider,addedCollider);
+			}
+		}
+
 		public static void convertCollider(MagicaPlaneCollider1 mg1_collider, MagicaPlaneCollider2 newCollider){
 
 		}
