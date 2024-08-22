@@ -63,7 +63,7 @@ namespace MagicaConverter{
 			}
 		}
 
-		private static void convertColliders(GameObject selectedObject){
+		public static void convertColliders(GameObject selectedObject){
 			MagicaCapsuleCollider1[] colliders = selectedObject.GetComponentsInChildren<MagicaCapsuleCollider1>(true);
 			foreach(MagicaCapsuleCollider1 collider in colliders){
 				GameObject parentObject = collider.gameObject;
