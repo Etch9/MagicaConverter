@@ -111,7 +111,7 @@ namespace MagicaConverter{
 		private void convert(){
 			if(selectedOption == ConversionTypes.Colliders || selectedOption == ConversionTypes.Full){
 				Debug.Log($"selectedOption == ConversionTypes.Colliders | {selectedOption == ConversionTypes.Colliders}");
-				MG1_MG2Converter.convertColliders(selectedObject);
+				MG_MG2Converter.convertColliders(selectedObject);
 			}
 		}
 	}
