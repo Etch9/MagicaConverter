@@ -9,7 +9,7 @@ using MagicaPlaneCollider1 = MagicaCloth.MagicaPlaneCollider;
 using MagicaPlaneCollider2 = MagicaCloth2.MagicaPlaneCollider;
 
 namespace MagicaConverter{
-	public class MG_MG2Converter
+	public static class MG_MG2Converter
 	{
 
 		public static void convertCollider(MagicaCapsuleCollider1 mg1_collider, MagicaCapsuleCollider2 newCollider){
@@ -63,7 +63,7 @@ namespace MagicaConverter{
 			}
 		}
 
-		private void convertColliders(GameObject selectedObject){
+		private static void convertColliders(GameObject selectedObject){
 			MagicaCapsuleCollider1[] colliders = selectedObject.GetComponentsInChildren<MagicaCapsuleCollider1>(true);
 			foreach(MagicaCapsuleCollider1 collider in colliders){
 				GameObject parentObject = collider.gameObject;
