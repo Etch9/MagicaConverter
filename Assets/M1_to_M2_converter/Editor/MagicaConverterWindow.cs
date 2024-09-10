@@ -6,6 +6,8 @@ using MagicaCapsuleCollider1 = MagicaCloth.MagicaCapsuleCollider;
 using Magica1Axis = MagicaCloth.MagicaCapsuleCollider.Axis;
 using Magica2Axis = MagicaCloth2.MagicaCapsuleCollider.Direction;
 using MagicaCapsuleCollider2 = MagicaCloth2.MagicaCapsuleCollider;
+using MagicaPlaneCollider1 = MagicaCloth.MagicaPlaneCollider;
+using MagicaPlaneCollider2 = MagicaCloth2.MagicaPlaneCollider;
 
 
 namespace MagicaConverter{
@@ -111,7 +113,8 @@ namespace MagicaConverter{
 		private void convert(){
 			if(selectedOption == ConversionTypes.Colliders || selectedOption == ConversionTypes.Full){
 				Debug.Log($"selectedOption == ConversionTypes.Colliders | {selectedOption == ConversionTypes.Colliders}");
-				MG_MG2Converter.convertColliders(selectedObject);
+				MG_MG2Converter.convertCapsuleColliders(selectedObject);
+				MG_MG2Converter.convertPlaneColliders(selectedObject);
 			}
 		}
 	}

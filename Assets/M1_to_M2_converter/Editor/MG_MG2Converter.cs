@@ -12,7 +12,7 @@ namespace MagicaConverter{
 	public static class MG_MG2Converter
 	{
 
-		public static void convertCollider(MagicaCapsuleCollider1 mg1_collider, MagicaCapsuleCollider2 newCollider){
+		public static void convertCapsuleCollider(MagicaCapsuleCollider1 mg1_collider, MagicaCapsuleCollider2 newCollider){
 			float length= mg1_collider.Length;
 			float startRadius = mg1_collider.StartRadius;
 			float endRadius = mg1_collider.EndRadius;
@@ -63,18 +63,27 @@ namespace MagicaConverter{
 			}
 		}
 
-		public static void convertColliders(GameObject selectedObject){
+		public static void convertCapsuleColliders(GameObject selectedObject){
 			MagicaCapsuleCollider1[] colliders = selectedObject.GetComponentsInChildren<MagicaCapsuleCollider1>(true);
 			foreach(MagicaCapsuleCollider1 collider in colliders){
 				GameObject parentObject = collider.gameObject;
 				
 				MagicaCapsuleCollider2 addedCollider = parentObject.AddComponent<MagicaCapsuleCollider2>();
-				MG_MG2Converter.convertCollider(collider,addedCollider);
+				MG_MG2Converter.convertCapsuleCollider(collider,addedCollider);
 			}
 		}
 
-		public static void convertCollider(MagicaPlaneCollider1 mg1_collider, MagicaPlaneCollider2 newCollider){
+		public static void convertPlaneCollider(MagicaPlaneCollider1 mg1_collider, MagicaPlaneCollider2 newCollider){
+			newCollider.center = new Vector3(mg1_collider.Center.x,mg1_collider.Center.y,mg1_collider.Center.z);
+		}
 
+		public static void convertPlaneColliders(GameObject selectedObject){
+			MagicaPlaneCollider1[] colliders = selectedObject.GetComponentsInChildren<MagicaPlaneCollider1>(true);
+			foreach(MagicaPlaneCollider1 collider in colliders){
+				GameObject parentObject = collider.gameObject;	
+				MagicaPlaneCollider2 addedCollider = parentObject.AddComponent<MagicaPlaneCollider2>();
+				MG_MG2Converter.convertPlaneCollider(collider,addedCollider);
+			}
 		}
 	}
 }
