@@ -113,8 +113,7 @@ namespace MagicaConverter{
 		private void convert(){
 			if(selectedOption == ConversionTypes.Colliders || selectedOption == ConversionTypes.Full){
 				Debug.Log($"selectedOption == ConversionTypes.Colliders | {selectedOption == ConversionTypes.Colliders}");
-				MG_MG2Converter.convertCapsuleColliders(selectedObject);
-				MG_MG2Converter.convertPlaneColliders(selectedObject);
+				MG_MG2Converter.convertColliders(selectedObject);
 			}
 		}
 	}
